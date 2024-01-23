@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Customer CSS commons.css -->
+    <link rel="stylesheet" href="../css/commons.css">
+</head>
+
+<body>
+    <nav>nav</nav>
+    <main>
+        <!-- apply form-control with row and col -->
+        <div>apply form-control with row and col</div>
+        <div class="row">
+            <div class="col-3">
+                <input type="text" class="form-control-plaintext" id="email" placeholder="Email : " name="email">
+            </div>
+            <div class="col-6">
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+            </div>
+        </div>
+        <!-- apply form-control -->
+        <div>apply form-control</div>
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+        <hr>
+        <!-- select menu -->
+        <div>
+            <label for="carcompanyname">Choose Car Company : </label>
+            <select class="form-select" name="car_company_name" id="carcompanyname">
+                <option value="volvo">볼보</option>
+                <option value="hyundai" selected>현대</option>
+                <option value="Audi">Audi</option>
+                <option value="Porsche">포르쉐</option>
+            </select>
+        </div>
+        <!-- apply form-control with row and col -->
+        <div>apply form-control with row and col</div>
+        <div class="row">
+            <div class="col-3">
+                <input type="text" class="form-control-plaintext" id="email" placeholder="Email : " name="email">
+            </div>
+            <div class="col-4">
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+            </div>
+            <div class="col-5">
+                <label for="carcompanyname">Choose Car Company : </label>
+                <select class="form-select" name="car_company_name" id="carcompanynames">
+                    <option value="volvo">볼보</option>
+                    <option value="hyundai" selected>현대</option>
+                    <option value="Audi">Audi</option>
+                    <option value="Porsche">포르쉐</option>
+                </select>
+            </div>
+        </div>
+        <hr>
+        <div>
+            연구소 이름 : <input type="text" name="lab_name" value="youjulab" id="lab_name">
+        </div>
+        <div id="radio_list">
+            <div>- 희망 사항 선택 -</div>
+            <div class="form-check">
+                <label class="form-check-label" for="hopedoglang">강아지 말 희망</label>
+                <input class="form-check-input" type="radio" name="hope_lang" value="dog_lang" id="hopedoglang">
+            </div>
+            <div class="form-check">
+                <label class="form-check-label" for="hopecatlang">고양이 말 희망</label>
+                <input class="form-check-input" type="radio" name="hope_lang" value="cat_lang" id="hopecatlang">
+            </div>
+        </div>
+        <div>
+            <button type="submit" id="tag_enable">links로 정보 전달</button>
+            <button type="reset" id="tag_disable">같은 form 내 정보 재설정</button>
+        </div>
+
+    </main>
+    <footer>footer</footer>
+    <form action="../index.html">
+        <button type="submit">index.html로 이동</button:sumbit>
+    </form>
+</body>
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    let tag_enable = document.querySelector("#tag_enable");
+    let tag_disable = document.querySelector("#tag_disable");
+    let radio_list = document.querySelector("#radio_list");
+    let radio_content = radio_list.innerHTML;
+    let carcompanyname = document.querySelector("#carcompanynames");
+    let event_keydown = document.querySelector("#lab_name")
+    tag_disable.addEventListener('click', (event) => {
+        radio_list.innerHTML = '';
+    });
+    tag_enable.addEventListener('click', (event) => {
+        radio_list.innerHTML = radio_content;
+    });
+    carcompanyname.addEventListener('change', (event) => {
+        console.log(`선택한 차  : ${event.target.value}`);
+    });
+    event_keydown.addEventListener('keydown', (event) => {
+        console.log(`now key down code: ${event.code}`);
+    });
+    
+</script>
+
+</html>
