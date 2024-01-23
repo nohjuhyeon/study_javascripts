@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Customer CSS commons.css -->
+    <link rel="stylesheet" href="../css/commons.css">
+</head>
+
+<body>
+    <nav>nav</nav>
+    <main class="container">
+        <h2>Basic Table</h2>
+        <table class="table table-hover table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>john@example.com</td>
+                </tr>
+                <tr>
+                    <td id="third_firstname">Mary</td>
+                    <td id="third_lastname">Moe</td>
+                    <td id="third_email">mary@example.com</td>
+                </tr>
+                <tr id="forth_member">
+                    <td>July</td>
+                    <td>Dooley</td>
+                    <td>july@example.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <footer>footer</footer>
+</body>
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+</script>
+<script>
+    let forth_member = document.querySelector("#forth_member")
+    forth_member.innerHTML = ''
+    // ''
+    let third_firstname = document.querySelector("#third_firstname")
+    third_firstname.innerHTML = "CoCo"
+    // 'CoCo'
+    let third_lastname = document.querySelector("#third_lastname")
+    third_lastname.innerHTML = "Lab"
+    // 'Lab'
+    let third_email = document.querySelector("#third_email")
+    third_email.innerHTML = "coco@cocolab.com"
+    // 'coco@cocolab.com'
+</script>
+
+</html>
