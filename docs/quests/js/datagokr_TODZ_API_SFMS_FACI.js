@@ -34,11 +34,15 @@ let pagenum = 1;
 event(pagenum)
 
 // 이전 버튼을 눌렀을 때
-let before_btn = document.querySelector('#before_btn');                     
+let before_btn = document.querySelector('#before_btn');
 before_btn.addEventListener('click', async (event) => {
+    // 페이지가 1페이지일 경우 이전 페이지로 가지 않게 하기
     if (pagenum == 1) {
         pagenum = 1;
-    } else {
+    } 
+    
+    // 페이지가 1페이지가 아닐 경우 이전 페이지로 이동
+    else {
         pagenum = pagenum - 1;
     }
     console.log(`pagenum : ${pagenum}`)
@@ -74,12 +78,21 @@ next_btn.addEventListener('click', async (event) => {
         let result = await response.json();       // response(응답)
         let facility_list = "";
         let facility_array = result['response']['body']['items']['item'];
-        for (let facility_element of facility_array) {
-            facility_list = `${facility_list}<tr><td class='p-2'>${facility_element["faci_nm"]}</td><td class='p-2'>${facility_element["ftype_nm"]}</td>
-            <td class='p-2'>${facility_element["faci_road_addr"]}</td><td class='p-2'>${facility_element["faci_tel_no"]}</td><td class='p-2'>${facility_element["faci_stat_nm"]}</td></tr>`
+
+        // 다음 페이지에 내용이 있는지 확인
+        if (facility_array.length > 0) {
+            for (let facility_element of facility_array) {
+                facility_list = `${facility_list}<tr><td class='p-2'>${facility_element["faci_nm"]}</td><td class='p-2'>${facility_element["ftype_nm"]}</td>
+                <td class='p-2'>${facility_element["faci_road_addr"]}</td><td class='p-2'>${facility_element["faci_tel_no"]}</td><td class='p-2'>${facility_element["faci_stat_nm"]}</td></tr>`
+            }
+            let facility_array_id = document.querySelector("#facility_array_id");
+            facility_array_id.innerHTML = facility_list
         }
-        let facility_array_id = document.querySelector("#facility_array_id");
-        facility_array_id.innerHTML = facility_list
+
+        // 다음 페이지에 내용이 없을 경우 다음 페이지로 넘어가지 않게 하기
+        else {
+            pagenum = pagenum - 1
+        };
     } catch (error) {
         console.log(`Error Message : ${error.message}`)
     }
