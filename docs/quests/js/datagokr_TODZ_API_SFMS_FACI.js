@@ -9,7 +9,7 @@
 
 // from data.go.kr with loan rate
 async function event(pagenum) {
-    let url = `https://apis.data.go.kr/B551014/SRVC_API_SFMS_FACI/TODZ_API_SFMS_FACI?serviceKey=ow0djIIbtYKcXjahX81pjlVfuA8kUj6DBQkALWCEeCXNuir3R0%2BLMOTTuhmW9Ms7R%2FAVfqb7cGIAazhHFttnPw%3D%3D&pageNo=${pagenum}&numOfRows=10&resultType=JSON&faci_gb_nm=&fcob_nm=체력단련장업&ftype_nm=체력단련장&cp_nm=서울특별시&cpb_nm=중구`;
+    let url = `https://apis.data.go.kr/B551014/SRVC_API_SFMS_FACI/TODZ_API_SFMS_FACI?serviceKey=ow0djIIbtYKcXjahX81pjlVfuA8kUj6DBQkALWCEeCXNuir3R0%2BLMOTTuhmW9Ms7R%2FAVfqb7cGIAazhHFttnPw%3D%3D&pageNo=${pagenum}&numOfRows=10&resultType=JSON&faci_gb_nm=&cp_nm=서울특별시&cpb_nm=중구`;
     let options = {};
     try {
         let response = await fetch(url, options);   // send
@@ -46,8 +46,7 @@ before_btn.addEventListener('click', async (event) => {
         pagenum = pagenum - 1;
     }
     console.log(`pagenum : ${pagenum}`)
-    let url = `https://apis.data.go.kr/B551014/SRVC_API_SFMS_FACI/TODZ_API_SFMS_FACI?serviceKey=ow0djIIbtYKcXjahX81pjlVfuA8kUj6DBQkALWCEeCXNuir3R0%2BLMOTTuhmW9Ms7R%2FAVfqb7cGIAazhHFttnPw%3D%3D&pageNo=${pagenum}&numOfRows=10&resultType=JSON&faci_gb_nm=&fcob_nm=체력단련장업&ftype_nm=체력단련장&cp_nm=서울특별시&cpb_nm=중구`;
-    let options = {};
+    let url = `https://apis.data.go.kr/B551014/SRVC_API_SFMS_FACI/TODZ_API_SFMS_FACI?serviceKey=ow0djIIbtYKcXjahX81pjlVfuA8kUj6DBQkALWCEeCXNuir3R0%2BLMOTTuhmW9Ms7R%2FAVfqb7cGIAazhHFttnPw%3D%3D&pageNo=${pagenum}&numOfRows=10&resultType=JSON&faci_gb_nm=&cp_nm=서울특별시&cpb_nm=중구`;    let options = {};
     try {
         let response = await fetch(url, options);   // send
 
@@ -70,8 +69,7 @@ let next_btn = document.querySelector('#next_btn')
 next_btn.addEventListener('click', async (event) => {
     pagenum = pagenum + 1
     console.log(`pagenum : ${pagenum}`)
-    let url = `https://apis.data.go.kr/B551014/SRVC_API_SFMS_FACI/TODZ_API_SFMS_FACI?serviceKey=ow0djIIbtYKcXjahX81pjlVfuA8kUj6DBQkALWCEeCXNuir3R0%2BLMOTTuhmW9Ms7R%2FAVfqb7cGIAazhHFttnPw%3D%3D&pageNo=${pagenum}&numOfRows=10&resultType=JSON&faci_gb_nm=&fcob_nm=체력단련장업&ftype_nm=체력단련장&cp_nm=서울특별시&cpb_nm=중구`;
-    let options = {};
+    let url = `https://apis.data.go.kr/B551014/SRVC_API_SFMS_FACI/TODZ_API_SFMS_FACI?serviceKey=ow0djIIbtYKcXjahX81pjlVfuA8kUj6DBQkALWCEeCXNuir3R0%2BLMOTTuhmW9Ms7R%2FAVfqb7cGIAazhHFttnPw%3D%3D&pageNo=${pagenum}&numOfRows=10&resultType=JSON&faci_gb_nm=&cp_nm=서울특별시&cpb_nm=중구`;    let options = {};
     try {
         let response = await fetch(url, options);   // send
 
